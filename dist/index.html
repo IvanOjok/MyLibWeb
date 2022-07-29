@@ -1,0 +1,366 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Learn how to use the Firebase platform on the Web">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyLib Admin</title>
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Friendly Chat">
+  <meta name="theme-color" content="#303F9F">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Friendly Chat">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#303F9F">
+
+  <!-- Tile icon for Win8 -->
+  <meta name="msapplication-TileColor" content="#3372DF">
+  <meta name="msapplication-navbutton-color" content="#303F9F">
+
+  <!-- Material Design Lite -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+  <!-- App Styling -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+
+
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+</head>
+<body>
+
+  <!-- fixed navigation bar -->
+  <div hidden class="sidenav">
+    <div class="sidenavelement">
+       <h1 >MyLib</h1>
+    </div>
+    <div>
+      <a class="sign-in" onclick="signIn()" id="signIn" href="#">SignIn With Google</a>
+    </div>
+    <div hidden class="navElements">
+      <div class="sidenavelement">
+        <a href="books.html" id="book">Books</a>
+     </div>
+     <div class="sidenavelement">
+        <a href="addBook.html">Add Books</a>
+     </div>
+     <div class="sidenavelement">
+        <a href="addTerm.html">Add Terms</a>
+     </div>
+     <div class="sidenavelement">
+        <a href="addTopic.html">Add Topics</a>
+     </div>
+     <div class="sidenavelement">
+        <a href="addLesson.html">Add Lessons</a>
+     </div>
+     <div class="sidenavelement">
+        <a href="addQuiz.html">Add Quiz</a>
+     </div>
+    </div>
+
+      <div id="must-signin-snackbar" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+      </div>
+
+  </div>
+
+ <!-- Main content loading part -->
+  <div class="main" id="content">
+      <h1> Library Management </h1>
+  </div>
+
+  <!-- Login -->
+  <div class="signIn">
+    
+    <div class="log-in-form">
+
+        <div class="form-group">
+            <label>Enter User Email</label> <br>
+            <input type="text" placeholder="User Email" class="form-control" id="email" required>
+        </input>
+        </div>
+
+        <div class="form-group">
+            <label>Enter User Password</label> <br>
+            <input type="text" placeholder="User Password" class="form-control" id="password" required></input>
+        </div>
+
+        <!-- <div class="form-group">
+            <button class="button" id="signInUser" onclick="signUp()" value="Sign Up">Sign Up</button>
+        </div> -->
+
+        <div class="form-group">
+            <button class="button" id="signInUser" onclick="signIn()" value="Sign In">Sign In</button>
+        </div>
+
+        <div class="form-group">
+            <button class="button" id="signInUser" onclick="signOut()" value="Sign Out">Sign Out</button>
+        </div>
+    </div>
+
+    </div>
+  
+  <!-- Add Book Part -->
+  <div hidden class="addBook">
+    <h3>Add Book</h3>
+    <form class="add-book-form">
+        <!-- <div class="form-group">
+            <label for bookClass>Enter Class</label> <br>
+            <select id="bookClass" name="Book Class" class="form-control">
+                <option value="one">Primary 1</option>
+                <option value="two">Primary 2</option>
+                <option value="three">Primary 3</option>
+                <option value="four">Primary 4</option>
+                <option value="five">Primary 5</option>
+                <option value="six">Primary 6</option>
+                <option value="seven">Primary 7</option>
+              </select>
+        </div> -->
+
+        <div class="form-group">
+            <label>Enter Book Title</label> <br>
+            <input type="text" placeholder="Book Name" class="form-control" id="bookTitle" required>
+        </input>
+        </div>
+
+        <div class="form-group">
+            <label>Enter Book Subject</label> <br>
+            <input type="text" placeholder="Book Subject" class="form-control" id="bookSubject" required></input>
+        </div>
+
+        <div class="form-group">
+            <label>Enter Book Description</label> <br>
+            <textarea type="text" rows="5" placeholder="Book Description" class="form-control" id="bookDescription" required>
+            </textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Enter Book Color Code</label> <br>
+            <input type="text" placeholder="Book Color" class="form-control" id="bookColor" required>
+        </input>
+        </div>
+
+        <div class="form-group">
+            <label>Enter Book Price</label> <br>
+            <input type="text" placeholder="Book Price" class="form-control" id="bookPrice" required>
+        </input>
+        </div>
+
+        <div class="form-group">
+            <label>Enter Number Of Book Lessons</label> <br>
+            <input type="text" placeholder="Book Lessons" class="form-control" id="lessons" required>
+        </input>
+        </div>
+
+        <div class="form-group">
+            <label>Enter Book Topics</label> <br>
+            <input type="text" placeholder="Book Topics" class="form-control" id="topics" required>
+        </input>
+        </div>
+
+        <div class="form-group">
+            <div class="invalid-feedback">
+                Please choose a valid image
+            </div> 
+             <input type="file" class="form-control" id="bookUrl" />
+        </div>
+
+        <div class="form-group">
+            <input id="saveBook" type="submit" onclick="addBookFun()" value="Save Book">
+        </div>
+
+    </form>
+
+    <div id="result">
+
+    </div>
+  </div>
+
+  <!-- Add term -->
+  <div hidden class="addTerm">
+      <h3>Add Term</h3>
+      <form class="add-book-form">
+          <div class="form-group">
+              <label for termTitle>Enter term Title</label> <br>
+              <select id="termTitle" name="Term Title" class="form-control">
+                  <option value="term_one">Term 1</option>
+                  <option value="term_two">Term 2</option>
+                  <option value="term_three">Term 3</option>
+                </select>
+          </div>
+
+          <div class="form-group">
+              <label>Enter Book Term Price</label> <br>
+              <input type="text" placeholder="Term Price" class="form-control" id="termPrice" required>
+          </input>
+          </div>
+
+          <div class="form-group">
+              <label>Enter Number Of Term Lessons</label> <br>
+              <input type="text" placeholder="Term Lessons" class="form-control" id="lessons" required>
+          </input>
+          </div>
+
+          <div class="form-group">
+              <label>Enter Term Topics</label> <br>
+              <input type="text" placeholder="Term Topics" class="form-control" id="topics" required>
+          </input>
+          </div>
+
+          <div class="form-group">
+              <div class="invalid-feedback">
+                  Please choose a valid term icon
+              </div> 
+               <input type="file" class="form-control" id="termIcon" />
+          </div>
+
+          <!-- <div class="form-group">
+              <img id="selected-image" width="250" height="250" src="#" />
+          </div> -->
+
+          <!-- <div class="form-group">
+              <div class="progress bg-secondary">
+                  <div class="progress-bar-bg-success" id="upload-progress" style="width: 0;">0%</div>
+
+              </div>
+
+          </div> -->
+
+          <div class="form-group">
+              <input id="saveTerm" type="submit" onclick="addBookFun()" value="Save Book Term">
+          </div>
+
+      </form>
+
+      <div id="result">
+
+      </div>
+  </div>
+
+  <!-- Add Topic -->
+  <div hidden class="addTopic">
+    <h3>Add Topic</h3>
+    <form class="add-book-form">
+        <div class="form-group">
+            <label for termTitle>Enter term Title</label> <br>
+            <select id="termTitle" name="Term Title" class="form-control">
+                <option value="term_one">Term 1</option>
+                <option value="term_two">Term 2</option>
+                <option value="term_three">Term 3</option>
+              </select>
+        </div>
+
+        <div class="form-group">
+            <label>Enter Book Topic Title</label> <br>
+            <input type="text" placeholder="Book Topic Title" class="form-control" id="topicTitle" required>
+        </input>
+        </div>
+
+        <div class="form-group">
+            <label>Enter Book Topic Theme</label> <br>
+            <input type="text" placeholder="Book Topic Theme" class="form-control" id="topicTheme" required>
+        </input>
+        </div>
+
+        <div class="form-group">
+            <div class="invalid-feedback">
+                Please choose a valid topic icon
+            </div> 
+             <input type="file" class="form-control" id="topicIcon" />
+        </div>
+
+        <!-- <div class="form-group">
+            <img id="selected-image" width="250" height="250" src="#" />
+        </div> -->
+
+        <!-- <div class="form-group">
+            <div class="progress bg-secondary">
+                <div class="progress-bar-bg-success" id="upload-progress" style="width: 0;">0%</div>
+
+            </div>
+
+        </div> -->
+
+        <div class="form-group">
+            <input id="saveTerm" type="submit" onclick="addBookFun()" value="Save Book Topic">
+        </div>
+
+    </form>
+
+    <div id="result">
+
+    </div>
+  </div>
+
+  <!-- Add Lesson and Section -->
+  <div hidden class="addLesson">
+    <h3>Add Book Lesson</h3>
+    <form class="add-book-form">
+        <div class="form-group">
+          <label>Enter Book Lesson Title</label> <br>
+          <input type="text" placeholder="Book Lesson Title" class="form-control" id="lessonTitle" required>
+          </input>
+        </div>
+
+        <h6>Add Section</h6>
+
+        <div class="form-group">
+          <label>Enter Book Lesson Section Title</label> <br>
+          <input type="text" placeholder="Book Lesson Section" class="form-control" id="lessonTitle" required>
+          </input>
+        </div>
+
+        <div class="form-group">
+            <label for lessonMedia>Enter Media Type</label> <br>
+            <select id="lessonMedia" name="Lesson Media" class="form-control">
+                <option value="none">None</option>
+                <option value="image">Image</option>
+                <option value="video">Video</option>
+              </select>
+        </div>
+
+        <div class="form-group">
+            <label>Enter Section Content</label> <br>
+            <textarea type="text" rows="5" placeholder="Lesson Section Description" class="form-control" id="lessonContent" required>
+            </textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Enter Media Caption (none if no media)</label> <br>
+            <input type="text" placeholder="Media Caption" class="form-control" id="mediaCaption" required>
+        </input>
+      </div>
+
+        <div class="form-group">
+            <div class="invalid-feedback">
+                Please choose a valid section image
+            </div> 
+             <input type="file" class="form-control" id="bookUrl" />
+        </div>
+
+        <div class="form-group">
+            <input id="saveBook" type="submit" onclick="addBookFun()" value="Save Book Lesson Section">
+        </div>
+
+    </form>
+
+    <div id="result">
+
+    </div>
+</div>
+
+
+<script src="bundle.js"></script>
+
+</body>
+</html>

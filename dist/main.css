@@ -1,0 +1,138 @@
+body, div {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    color: rgb(27, 50, 112);
+    padding-left: 20px;
+}
+
+h3 {
+  color: rgb(27, 50, 112);
+    padding-left: 20px;
+}
+
+.messages-card {
+  background-color: rgb(209, 108, 14);
+  color: rgb(168, 50, 50);
+}
+
+
+/* The sidebar menu */
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 250px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: rgb(209, 108, 14); /* Orange */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #080808;
+    display: block;
+  }
+
+  .navElements a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #080808;
+    display: block;
+  }
+  
+  .sidenav a.active {
+    color: #f1f1f1;
+    background-color: #04AA;
+  }
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover:not(.active) {
+    color: #f1f1f1;
+    background-color: #555;
+    display: inline-block;
+  }
+  
+  /* Style page content */
+  .main, .signIn, .addBook, .addTerm, .addTopic, .addLesson {
+    margin-left: 250px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  .sidebar a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+
+  .sidenavelement a:hover {
+      background-color: antiquewhite;
+      color: black;
+  }
+
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+  }
+  
+  .button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 50px;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  .hidden {
+    display: none;
+  }
